@@ -4,9 +4,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh '''#!/bin/bash
-                echo 'In C or Java, we can compile our program in this step'
-                echo 'In Python, we can build our package here or skip this step'
+                sh '''
+                conda create -n mlip python pytest numpy pandas scikit-learn -c conda-forge
+                conda activate mlip
                 '''
             }
         }
@@ -20,6 +20,7 @@ pipeline {
 
                 # TODO Complete the command to run pytest
                 # sudo /PATH/TO/CONDA run -n <Envinronment Name> <Command you want to run>
+                conda run -n mlip pytest
 
                 echo 'pytest not runned'
                 exit 1 #comment this line after implementing Jenkinsfile
