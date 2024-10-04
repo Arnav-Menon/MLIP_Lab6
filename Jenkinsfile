@@ -5,8 +5,8 @@ pipeline {
         stage('Build') {
             steps {
                 sh '''
-                conda create -n mlip python pytest numpy pandas scikit-learn -c conda-forge
-                conda activate mlip
+                C:\\Users\\arnav\\miniconda3 conda create -n mlip python pytest numpy pandas scikit-learn -c conda-forge
+                C:\\Users\\arnav\\miniconda3 conda activate mlip
                 '''
             }
         }
@@ -20,7 +20,7 @@ pipeline {
 
                 # TODO Complete the command to run pytest
                 # sudo /PATH/TO/CONDA run -n <Envinronment Name> <Command you want to run>
-                conda run -n mlip pytest
+                C:\\Users\\arnav\\miniconda3 conda run -n mlip pytest
 
                 echo 'pytest not runned'
                 exit 1 #comment this line after implementing Jenkinsfile
